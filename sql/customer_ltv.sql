@@ -53,7 +53,7 @@ segmented AS (
         *,
         CASE
             WHEN total_revenue >= 150 THEN 'A — High value'
-            WHEN total_revenue BETWEEN 50 AND 149 THEN 'B — Medium value'
+            WHEN total_revenue >= 100 AND total_revenue < 150 THEN 'B — Medium value'
             ELSE 'C — Low value'
         END AS ltv_segment
     FROM merged
